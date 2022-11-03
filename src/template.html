@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../src/styles.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <div class="game-container">
       <div class="game-container__ui">
-        <div class="game-container__player healthbar"></div>
-        <div class="game-container__timer healthbar"></div>
-        <div class="game-container__enemy healthbar"></div>
+        <div class="game-container__ui--healthbar leftSide">
+          <div class="game-container__ui--healthbar-baseHealth"></div>
+          <div id="playerHealth"></div>
+        </div>
+        <div class="game-container__ui--timer"></div>
+        <div class="game-container__ui--healthbar">
+          <div class="game-container__ui--healthbar-baseHealth"></div>
+          <div id="enemyHealth"></div>
+        </div>
       </div>
       <canvas />
     </div>
   </body>
-  <script src="./bundle.js"></script>
 </html>

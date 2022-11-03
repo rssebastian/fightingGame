@@ -1,10 +1,59 @@
-.game-container {
-    position: relative;
+* {
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.game-container__ui
-.healthbar {
-    background-color: yellow;
+.game-container {
+    position: relative;
+    display: inline-block;
+
+    &__ui {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+.game-container__ui--healthbar {
+    position: relative;
     height: 30px;
+    width: 100%;
+
+    &.leftSide {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &-baseHealth {
+        background-color: yellow;
+        height: inherit;
+        width: inherit;
+    }
+
+    #playerHealth {
+        position: absolute;
+        background-color: blue;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #enemyHealth {
+        position: absolute;
+        background-color: blue;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.game-container__ui--timer {
+    background-color: red;
     width: 100px;
+    height: 100px;
+    flex-shrink: 0;
 }

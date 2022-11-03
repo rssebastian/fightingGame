@@ -27,7 +27,8 @@ class Sprite {
       height: 50,
     };
     this.color = color;
-    this.attacking = null;
+    this.isAttacking = null;
+    this.health = 100;
   }
 
   draw() {
@@ -166,14 +167,16 @@ function animate() {
     player.isAttacking
   ) {
     player.isAttacking = false;
-    console.log('collision');
+    enemy.health -= 20;
+    document.querySelector('#enemyHealth').style.width = enemy.health + '%';
   }
   if (
     rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    console.log('collision');
+    player.health -= 20;
+    document.querySelector('#playerHealth').style.width = player.health + '%';
   }
 }
 
