@@ -6,7 +6,7 @@ import {
   determineWinner,
   timer,
 } from './js/helperFunctions.js';
-import { backgroundImg, shopImg } from './assets';
+import { backgroundImg, shopImg, idleSamurai } from './assets';
 import './styles/styles.scss';
 
 // Add the event listeners
@@ -53,9 +53,12 @@ const player = new Fighter({
     y: 0,
   },
   color: 'red',
+  imageSrc: idleSamurai,
+  framesMax: 8,
+  scale: 2.5,
   offset: {
-    x: 0,
-    y: 0,
+    x: 215,
+    y: 157,
   },
 });
 
@@ -89,7 +92,7 @@ function animate() {
   background.update(c);
   shop.update(c);
   player.update(canvas);
-  enemy.update(canvas);
+  // enemy.update(canvas);
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
