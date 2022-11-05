@@ -6,6 +6,7 @@ import {
   determineWinner,
   timer,
 } from './js/helperFunctions.js';
+import { backgroundImg, shopImg } from './assets';
 import './styles/styles.scss';
 
 // Add the event listeners
@@ -20,6 +21,26 @@ const c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
 c.fillRect(0, 0, canvas.width, canvas.height);
+
+// Draw the background
+const background = new Sprite({
+  position: {
+    x: 0,
+    y: 0,
+  },
+  imageSrc: backgroundImg,
+});
+
+// Draw the shop
+const shop = new Sprite({
+  position: {
+    x: 600,
+    y: 128,
+  },
+  imageSrc: shopImg,
+  scale: 2.75,
+  framesMax: 6,
+});
 
 // Create the players
 const player = new Fighter({
@@ -65,6 +86,8 @@ function animate() {
   window.requestAnimationFrame(animate);
   c.fillStyle = 'black';
   c.fillRect(0, 0, canvas.width, canvas.height);
+  background.update(c);
+  shop.update(c);
   player.update(canvas);
   enemy.update(canvas);
 
