@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="game-container">
@@ -15,7 +21,7 @@
           <div id="playerHealth"></div>
         </div>
         <div class="game-container__ui--timer" id="timer">10</div>
-        <div class="game-container__ui--healthbar">
+        <div class="game-container__ui--healthbar rightSide">
           <div class="game-container__ui--healthbar-baseHealth"></div>
           <div id="enemyHealth"></div>
         </div>

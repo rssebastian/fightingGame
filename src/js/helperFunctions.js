@@ -13,10 +13,10 @@ export function rectangularCollision({ rectangle1, rectangle2 }) {
 export function determineWinner({ player, enemy, timerId = null }) {
   clearTimeout(timerId);
   if (player.health === enemy.health)
-    document.querySelector('#displayText').innerHTML = 'Draw';
+    document.querySelector('#displayText').innerHTML = 'Draw!';
   else if (player.health > enemy.health)
-    document.querySelector('#displayText').innerHTML = 'Player 1 Wins';
-  else document.querySelector('#displayText').innerHTML = 'Player 2 Wins';
+    document.querySelector('#displayText').innerHTML = 'Player 1 Wins!';
+  else document.querySelector('#displayText').innerHTML = 'Player 2 Wins!';
   document.querySelector('#displayText').style.display = 'flex';
 }
 
