@@ -145,7 +145,6 @@ export class Fighter extends Sprite {
 
   takeHit() {
     this.health -= 20;
-    console.log(this.healthbar.style);
     if (this.health <= 50) this.healthbar.style.backgroundColor = '#CA8A04';
     if (this.health <= 25) this.healthbar.style.backgroundColor = '#DC2626';
     if (this.health <= 0) this.switchSprite('death');

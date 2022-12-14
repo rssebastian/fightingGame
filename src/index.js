@@ -248,8 +248,6 @@ function startGame() {
       player.takeHit();
       enemy.isAttacking = false;
       document.querySelector('#playerHealth').style.width = player.health + '%';
-      console.log(player);
-      console.log(enemy);
     }
 
     // if enemy misses
