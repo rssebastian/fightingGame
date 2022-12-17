@@ -25,7 +25,15 @@ import {
 } from './assets';
 import './styles/styles.scss';
 
+let gameStarted = false;
+window.addEventListener('keydown', (event) => {
+  if (!gameStarted && event.key === 'Enter') startGame();
+});
+
 function startGame() {
+  gameStarted = true;
+  document.querySelector('#instructions').style.display = 'none';
+
   // Render UI
   const ui = document.querySelector('.game-container');
   ui.style.display = 'flex';
@@ -177,7 +185,7 @@ function startGame() {
   enemy.draw(c);
 
   // Start timer for 60 seconds
-  let decreaseTimer = timer(60, { player, enemy });
+  var decreaseTimer = timer(60, { player, enemy });
   decreaseTimer();
 
   function animate() {
@@ -257,11 +265,10 @@ function startGame() {
 
     if (enemy.health <= 0 || player.health <= 0) {
       determineWinner({ player, enemy });
+      gameStarted = false;
     }
   }
 
   // Start the game
   animate();
 }
-
-startGame();

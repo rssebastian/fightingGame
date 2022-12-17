@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sword Fighters</title>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
+    <div class="animate__animated animate__backInUp" id="instructions"></div>
     <div class="game-container">
       <div class="game-container__ui">
         <div class="game-container__ui--healthbar leftSide">
@@ -26,7 +31,10 @@
           <div id="enemyHealth"></div>
         </div>
       </div>
-      <div id="displayText"></div>
+      <div id="displayText">
+        <div id="winner"></div>
+        <p>Play again? Refresh the page!</p>
+      </div>
       <canvas />
     </div>
   </body>
